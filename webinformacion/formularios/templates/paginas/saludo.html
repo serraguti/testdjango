@@ -13,8 +13,18 @@
         {% csrf_token %}
         Introduzca su nombre:
         <input type="text" name="cajanombre"/>
+        <select name="select">
+            {% for d in lista %}
+                <option value="{{d.index}}">
+                    {{d.valor}}
+                </option>
+            {%endfor%}
+        </select>
         <button>Enviar</button>
     </form>
     <h2>Su nombre es...... {{nombre}} </h2>
+    {%if elemento%}
+        <h1>aa{{elemento}}</h1>
+    {%endif%}
 </body>
 </html>
